@@ -1,0 +1,64 @@
+{% include 'header.html' %}  
+<title>Deep Learning</title>
+{% include 'header1.html' %} 
+    <div class="main_body">
+
+    {% include 'dl_topic.html' %}
+        <div class="middle_body">
+        
+    <h1> Overfitting and Under-fitting! </h1>
+    <h2>Introduction</h2>
+    <p>Recall from the example in the previous lesson that Keras will keep a history of the training and validation loss over the epochs that it is training the model. In this lesson, we're going to learn how to interpret these learning curves and how we can use them to guide model development. In particular, we'll examine at the learning curves for evidence of underfitting and overfitting and look at a couple of strategies for correcting it.</p>
+    <h2>Interpreting the Learning Curves</h2>
+    <p>You might think about the information in the training data as being of two kinds: signal and noise. The signal is the part that generalizes, the part that can help our model make predictions from new data. The noise is that part that is only true of the training data; the noise is all of the random fluctuation that comes from data in the real-world or all of the incidental, non-informative patterns that can't actually help the model make predictions. The noise is the part might look useful but really isn't.
+        We train a model by choosing weights or parameters that minimize the loss on a training set. You might know, however, that to accurately assess a model's performance, we need to evaluate it on a new set of data, the validation data. (You could see our lesson on model validation in Introduction to Machine Learning for a review.)
+        When we train a model we've been plotting the loss on the training set epoch by epoch. To this we'll add a plot the validation data too. These plots we call the learning curves. To train deep learning models effectively, we need to be able to interpret them.
+        </p>
+    <img class="image_introduction"src="{{url_for('static', filename='pic15.PNG')}}" alt="layer connections">
+    <p>Now, the training loss will go down either when the model learns signal or when it learns noise. But the validation loss will go down only when the model learns signal. (Whatever noise the model learned from the training set won't generalize to new data.) So, when a model learns signal both curves go down, but when it learns noise a gap is created in the curves. The size of the gap tells you how much noise the model has learned.
+        Ideally, we would create models that learn all of the signal and none of the noise. This will practically never happen. Instead we make a trade. We can get the model to learn more signal at the cost of learning more noise. So long as the trade is in our favor, the validation loss will continue to decrease. After a certain point, however, the trade can turn against us, the cost exceeds the benefit, and the validation loss begins to rise.
+        </p>
+    <img class="image_introduction"src="{{url_for('static', filename='pic16.PNG')}}" alt="layer connections">
+    <p>This trade-off indicates that there can be two problems that occur when training a model: not enough signal or too much noise. Underfitting the training set is when the loss is not as low as it could be because the model hasn't learned enough signal. Overfitting the training set is when the loss is not as low as it could be because the model learned too much noise. The trick to training deep learning models is finding the best balance between the two.
+        We'll look at a couple ways of getting more signal out of the training data while reducing the amount of noise.
+        </p>
+   <h2>Capacity</h2>
+   <p>A model's capacity refers to the size and complexity of the patterns it is able to learn. For neural networks, this will largely be determined by how many neurons it has and how they are connected together. If it appears that your network is underfitting the data, you should try increasing its capacity.
+    You can increase the capacity of a network either by making it wider (more units to existing layers) or by making it deeper (adding more layers). Wider networks have an easier time learning more linear relationships, while deeper networks prefer more nonlinear ones. Which is better just depends on the dataset.
+    </p>
+   <img class="image_introduction"src="{{url_for('static', filename='pic17.PNG')}}" alt="layer connections">
+   <h2>Early Stopping</h2>
+   <p>We mentioned that when a model is too eagerly learning noise, the validation loss may start to increase during training. To prevent this, we can simply stop the training whenever it seems the validation loss isn't decreasing anymore. Interrupting the training this way is called early stopping</p>
+   <img class="image_introduction"src="{{url_for('static', filename='pic18.PNG')}}" alt="layer connections">
+   <p>Once we detect that the validation loss is starting to rise again, we can reset the weights back to where the minimum occured. This ensures that the model won't continue to learn noise and overfit the data.
+    Training with early stopping also means we're in less danger of stopping the training too early, before the network has finished learning signal. So besides preventing overfitting from training too long, early stopping can also prevent underfitting from not training long enough. Just set your training epochs to some large number (more than you'll need), and early stopping will take care of the rest.
+    </p>
+    <h2>Adding Early Stopping</h2>
+    <p>In Keras, we include early stopping in our training through a callback. A callback is just a function you want run every so often while the network trains. The early stopping callback will run after every epoch. (Keras has a variety of useful callbacks pre-defined, but you can define your own, too.)</p>
+    <img class="image_introduction"src="{{url_for('static', filename='pic19.PNG')}}" alt="layer connections">
+    <p>These parameters say: "If there hasn't been at least an improvement of 0.001 in the validation loss over the previous 20 epochs, then stop the training and keep the best model you found." It can sometimes be hard to tell if the validation loss is rising due to overfitting or just due to random batch variation. The parameters allow us to set some allowances around when to stop.
+        As we'll see in our example, we'll pass this callback to the fit method along with the loss and optimizer.
+        </p>
+
+<br><br>
+
+
+
+
+</div>
+        <div class="right_body">
+            <p>this is right side</p>
+            <p>this is right side</p>
+            <p>this is right side</p>
+            <p>this is right side</p>
+            <p>this is right side</p>
+
+
+        </div>
+    </div>
+
+    {% include 'footer.html' %}         
+    </div>
+</body>
+
+</html> 

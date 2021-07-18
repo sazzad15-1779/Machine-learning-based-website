@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quize</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="static\css\quize.css">
+</head>
+<body>
+<body>
+    <div class="wrapper">
+      <div class="quiz">
+        <div class="quiz_header">
+          <div class="quiz_user">
+            <h4 class="text-danger">Welcome! <span class="name"></span></h4>
+          </div>
+          <div class="quiz_timer">
+            <span class="time">00:00</span>
+          </div>
+        </div>
+        <div class="quiz_body">
+          <div id="questions">
+          </div>
+          <button class="btn btn-next" onclick="next()">Next Question</button>
+        </div>
+      </div>
+    </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+      <!-- site.js -->
+      <script src="dist/js/site.js"></script>
+      <!-- user info -->
+      <script src="dist/js/userInfo.js"></script>
+      <!-- timer -->
+      <script src="dist/js/timer.js"></script>
+</body>
+</html>

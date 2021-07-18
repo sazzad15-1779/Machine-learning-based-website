@@ -1,0 +1,38 @@
+{% include 'header.html' %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/project.css') }}">
+<title>Project Implementation </title>
+{% include 'header1.html' %}
+
+
+ <div class="fake_pradiction">
+	 <br><br>
+	<h2>Fake News Detector</h2>
+
+    <form action="{{ url_for('predict1')}}" method="POST">
+    	<textarea cols="55" rows= "5"class="prediction_text" name="message"  required="required" style="font-size: 14pt"></textarea>
+		<br> </br>
+        <button type="submit" class="Prediction_button">Predict</button>
+
+        	<div class="results">
+
+
+	{% if pr == ['FAKE']%}
+	<h2 style="color:red;">Looking Spam⚠️News </h2>
+	{% elif pr == ['REAL']%}
+	<h2 style="color:green;"><b>Looking Real News</b></h2>
+	{% endif %}
+			
+	</div>
+    </form>
+	<a href="{{ url_for('project') }}" class = "backbtn"><strong> Back </strong></a>
+	<br> <br>
+	<div class="description">Here is the Code Description of This  model
+	<a href="{{ url_for('code_description') }}" class = "code_description_link" >Code Description </a>
+</div>
+</div>
+
+{% include 'footer.html' %}         
+</div>
+</body>
+
+</html> 

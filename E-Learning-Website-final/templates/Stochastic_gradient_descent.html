@@ -1,0 +1,77 @@
+{% include 'header.html' %}  
+<title>Deep Learning</title>
+{% include 'header1.html' %} 
+    <div class="main_body">
+
+    {% include 'dl_topic.html' %}
+        <div class="middle_body">
+        
+    <h1> Stochastic Gradient Descent </h1>
+    <h2>Introduction</h2>
+       <p> In the first two lessons, we learned how to build fully-connected networks out of stacks of dense layers. When first created, all of the network's weights are set randomly -- the network doesn't "know" anything yet. In this lesson we're going to see how to train a neural network; we're going to see how neural networks learn.
+    As with all machine learning tasks, we begin with a set of training data. Each example in the training data consists of some features (the inputs) together with an expected target (the output). Training the network means adjusting its weights in such a way that it can transform the features into the target. In the 80 Cereals dataset, for instance, we want a network that can take each cereal's 'sugar', 'fiber', and 'protein' content and produce a prediction for that cereal's 'calories'. If we can successfully train a network to do that, its weights must represent in some way the relationship between those features and that target as expressed in the training data
+      </p>
+      <p>In addition to the training data, we need two more things:</p>
+<ul> 
+    <li>A "loss function" that measures how good the network's predictions are.</li> 
+    <li>An "optimizer" that can tell the network how to change its weights.</li>
+</ul>
+<h2>The Loss Function</h2>
+   <p>We've seen how to design an architecture for a network, but we haven't seen how to tell a network what problem to solve. This is the job of the loss function.
+    The loss function measures the disparity between the the target's true value and the value the model predicts.
+    Different problems call for different loss functions. We have been looking at regression problems, where the task is to predict some numerical value -- calories in 80 Cereals, rating in Red Wine Quality. Other regression tasks might be predicting the price of a house or the fuel efficiency of a car.
+    A common loss function for regression problems is the mean absolute error or MAE. For each prediction y_pred, MAE measures the disparity from the true target y_true by an absolute difference abs(y_true - y_pred).
+    The total MAE loss on a dataset is the mean of all these absolute differences.
+    </p>
+    <img class="image_introduction"src="{{url_for('static', filename='pic11.PNG')}}" alt="layer connections">
+    <p>Besides MAE, other loss functions you might see for regression problems are the mean-squared error (MSE) or the Huber loss (both available in Keras).
+    During training, the model will use the loss function as a guide for finding the correct values of its weights (lower loss is better). In other words, the loss function tells the network its objective.
+    </p>
+<h2>The Optimizer - Stochastic Gradient Descent</h2>
+   <p>We've described the problem we want the network to solve, but now we need to say how to solve it. This is the job of the optimizer. The optimizer is an algorithm that adjusts the weights to minimize the loss.</p>
+   <p>Virtually all of the optimization algorithms used in deep learning belong to a family called stochastic gradient descent. They are iterative algorithms that train a network in steps. One step of training goes like this:</p>
+   <ul> 
+    <li>1.	Sample some training data and run it through the network to make predictions.</li> 
+    <li>2.	Measure the loss between the predictions and the true values.</li>
+    <li>3.	Finally, adjust the weights in a direction that makes the loss smaller.</li>
+   </ul>
+   <p>Then just do this over and over until the loss is as small as you like (or until it won't decrease any further.)</p>
+   <img class="image_introduction"src="{{url_for('static', filename='pic12.PNG')}}" alt="layer connections">
+   <p>Each iteration's sample of training data is called a minibatch (or often just "batch"), while a complete round of the training data is called an epoch. The number of epochs you train for is how many times the network will see each training example.
+   </p>
+   <P>The animation shows the linear model from Lesson 1 being trained with SGD. The pale red dots depict the entire training set, while the solid red dots are the minibatches. Every time SGD sees a new minibatch, it will shift the weights (w the slope and b the y-intercept) toward their correct values on that batch. Batch after batch, the line eventually converges to its best fit. You can see that the loss gets smaller as the weights get closer to their true values.
+   </P>
+<h2>Learning Rate and Batch Size</h2>
+   <p>Notice that the line only makes a small shift in the direction of each batch (instead of moving all the way). The size of these shifts is determined by the learning rate. A smaller learning rate means the network needs to see more minibatches before its weights converge to their best values.
+    The learning rate and the size of the minibatches are the two parameters that have the largest effect on how the SGD training proceeds. Their interaction is often subtle and the right choice for these parameters isn't always obvious. (We'll explore these effects in the exercise.)
+    Fortunately, for most work it won't be necessary to do an extensive hyperparameter search to get satisfactory results. Adam is an SGD algorithm that has an adaptive learning rate that makes it suitable for most problems without any parameter tuning (it is "self tuning", in a sense). Adam is a great general-purpose optimizer.
+    </p>
+<h2>ADDING THE LOSS AND OPTIMIZER</h2>
+<p>After defining a model, you can add a loss function and optimizer with the model's compile method:</p>
+<img class="image_introduction"src="{{url_for('static', filename='pic13.PNG')}}" alt="layer connections">
+<p>Notice that we are able to specify the loss and optimizer with just a string. You can also access these directly through the Keras API -- if you wanted to tune parameters, for instance -- but for us, the defaults will work fine.
+</p>
+<img class="image_introduction"src="{{url_for('static', filename='pic14.PNG')}}" alt="layer connections">
+<p>Be sure to pass all the layers together in a list, like [layer, layer, layer, ...], instead of as separate arguments. To add an activation function to a layer, just give its name in the activation argument.</p>
+<br><br>
+
+
+
+
+</div>
+        <div class="right_body">
+            <p>this is right side</p>
+            <p>this is right side</p>
+            <p>this is right side</p>
+            <p>this is right side</p>
+            <p>this is right side</p>
+
+
+        </div>
+    </div>
+
+    {% include 'footer.html' %}         
+</div>
+</body>
+
+</html> 

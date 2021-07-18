@@ -1,0 +1,10 @@
+.fake_pradiction{
+    background: rgb(230, 232, 238);
+    width: 900px;
+    height: 600px;
+    margin: auto;
+    text-align: center;
+}
+.container{
+    background: red;
+}

@@ -1,0 +1,40 @@
+{% include 'header.html' %}  
+<title>Deep Learning</title>
+{% include 'header1.html' %} 
+    <div class="main_body">
+
+    {% include 'dl_topic.html' %}
+        <div class="middle_body">
+        
+       <h1> Batch Normalization </h1>
+<h2></h2>
+<p>The next special layer we'll look at performs "batch normalization" (or "batchnorm"), which can help correct training that is slow or unstable</p>
+<p>With neural networks, it's generally a good idea to put all of your data on a common scale, perhaps with something like scikit-learn's StandardScaler or MinMaxScaler. The reason is that SGD will shift the network weights in proportion to how large an activation the data produces. Features that tend to produce activations of very different sizes can make for unstable training behavior.</p>
+<p>Now, if it's good to normalize the data before it goes into the network, maybe also normalizing inside the network would be better! In fact, we have a special kind of layer that can do this, the batch normalization layer. A batch normalization layer looks at each batch as it comes in, first normalizing the batch with its own mean and standard deviation, and then also putting the data on a new scale with two trainable rescaling parameters. Batchnorm, in effect, performs a kind of coordinated rescaling of its inputs</p>
+<p>Most often, batchnorm is added as an aid to the optimization process (though it can sometimes also help prediction performance). Models with batchnorm tend to need fewer epochs to complete training. Moreover, batchnorm can also fix various problems that can cause the training to get "stuck". Consider adding batch normalization to your models, especially if you're having trouble during training</p>
+<h2>Adding Batch Normalization</h2>
+<p>It seems that batch normalization can be used at almost any point in a network. You can put it after a layer...</p>
+<img class="image_introduction"src="{{url_for('static', filename='pic22.PNG')}}" alt="layer connections">
+
+<br><br>
+
+
+
+
+</div>
+        <div class="right_body">
+            <p>this is right side</p>
+            <p>this is right side</p>
+            <p>this is right side</p>
+            <p>this is right side</p>
+            <p>this is right side</p>
+
+
+        </div>
+    </div>
+       
+    {% include 'footer.html' %}         
+</div>
+</body>
+
+</html> 

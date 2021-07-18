@@ -1,0 +1,39 @@
+{% include 'header.html' %}  
+<title>Deep Learning</title>
+{% include 'header1.html' %} 
+    <div class="main_body">
+
+    {% include 'dl_topic.html' %}
+        <div class="middle_body">
+        
+       <h1> Single Layer Perceptron </h1>
+       <p>For understanding single layer perceptron, it is important to understand Artificial Neural Networks (ANN). Artificial neural networks is the information processing system the mechanism of which is inspired with the functionality of biological neural circuits. An artificial neural network possesses many processing units connected to each other. Following is the schematic representation of artificial neural network −</p>
+       <img class="image_introduction"src="{{url_for('static', filename='pic26.PNG')}}" alt="layer connections">
+       <p>The diagram shows that the hidden units communicate with the external layer. While the input and output units communicate only through the hidden layer of the network.</p>
+       <p>The pattern of connection with nodes, the total number of layers and level of nodes between inputs and outputs with the number of neurons per layer define the architecture of a neural network.</p>
+       <h2>Single Layer Perceptron</h2>
+       <p>Single layer perceptron is the first proposed neural model created. The content of the local memory of the neuron consists of a vector of weights. The computation of a single layer perceptron is performed over the calculation of sum of the input vector each with the value multiplied by corresponding element of vector of the weights. The value which is displayed in the output will be the input of an activation function.</p>
+       <img class="image_introduction"src="{{url_for('static', filename='pic27.PNG')}}" alt="layer connections">
+
+<br><br>
+
+
+
+
+</div>
+        <div class="right_body">
+            <p>this is right side</p>
+            <p>this is right side</p>
+            <p>this is right side</p>
+            <p>this is right side</p>
+            <p>this is right side</p>
+
+
+        </div>
+    </div>
+
+    {% include 'footer.html' %}         
+    </div>
+</body>
+
+</html> 

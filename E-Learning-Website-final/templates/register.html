@@ -1,0 +1,60 @@
+{% include 'header.html' %}  
+<title>Sign Up</title>
+{% include 'header1.html' %} 
+    <div class="registration_container">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="alert alert-{{ category }}">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+{% if error %}
+  <div class="alert alert-danger">{{error}}</div>
+{% endif %}
+
+{% if msg %}
+  <div class="alert alert-success">{{msg}}</div>
+{% endif %}
+      <h1 class="reg_h1">Register</h1>
+      {% macro render_field(field) %}
+      {{ field.label }}
+      {{ field(**kwargs)|safe }}
+      {% if field.errors %}
+        {% for error in field.errors %}
+          <span class="help-inline">{{ error }}</span>
+        {% endfor %}
+      {% endif %}
+    {% endmacro %}
+      <form method="POST" action="">
+        <div class="registration_form">
+          {{render_field(form.name, class_="form-control")}}
+        </div>
+        <div class="registration_form">
+          {{render_field(form.email, class_="form-control")}}
+        </div>
+        <div class="registration_form">
+          {{render_field(form.username, class_="form-control")}}
+        </div>
+        <div class="registration_form">
+          {{render_field(form.password, class_="form-control")}}
+        </div>
+        <div class="registration_form">
+          {{render_field(form.confirm, class_="form-control")}}
+        </div>
+        <p><input type="submit" class="registration_btn" value="Submit"></p>
+      </form>
+    </div>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdn.ckeditor.com/4.6.2/basic/ckeditor.js"></script>
+    <script type="text/javascript">
+      CKEDITOR.replace('editor')
+    </script>
+      {% include 'footer.html' %}         
+    </div>
+</body>
+
+</html> 

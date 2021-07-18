@@ -1,0 +1,45 @@
+{% include 'header.html' %}  
+<title>Deep Learning</title>
+{% include 'header1.html' %} 
+    <div class="main_body">
+
+    {% include 'dl_topic.html' %}
+        <div class="middle_body">
+        
+       <h1> Dropout & Batch Normalization </h1>
+       <h2>Introduction</h2>
+       <p>There's more to the world of deep learning than just dense layers. There are dozens of kinds of layers you might add to a model. (Try browsing through the Keras docs for a sample!) Some are like dense layers and define connections between neurons, and others can do preprocessing or transformations of other sorts.
+        In this lesson, we'll learn about a two kinds of special layers, not containing any neurons themselves, but that add some functionality that can sometimes benefit a model in various ways. Both are commonly used in modern architectures.
+        </p>
+       <h2>Dropout</h2>
+       <p>The first of these is the "dropout layer", which can help correct overfitting.</p>
+       <p>In the last lesson we talked about how overfitting is caused by the network learning spurious patterns in the training data. To recognize these spurious patterns a network will often rely on very a specific combinations of weight, a kind of "conspiracy" of weights. Being so specific, they tend to be fragile: remove one and the conspiracy falls apart.</p>
+       <p>This is the idea behind dropout. To break up these conspiracies, we randomly drop out some fraction of a layer's input units every step of training, making it much harder for the network to learn those spurious patterns in the training data. Instead, it has to search for broad, general patterns, whose weight patterns tend to be more robust.</p>
+       <img class="image_introduction"src="{{url_for('static', filename='pic20.PNG')}}" alt="layer connections">
+       <p>You could also think about dropout as creating a kind of ensemble of networks. The predictions will no longer be made by one big network, but instead by a committee of smaller networks. Individuals in the committee tend to make different kinds of mistakes, but be right at the same time, making the committee as a whole better than any individual. (If you're familiar with random forests as an ensemble of decision trees, it's the same idea.)</p>
+       <h2>Adding Dropout</h2>
+       <p>In Keras, the dropout rate argument rate defines what percentage of the input units to shut off. Put the Dropout layer just before the layer you want the dropout applied to:</p>
+       <img class="image_introduction"src="{{url_for('static', filename='pic21.PNG')}}" alt="layer connections">
+
+<br><br>
+
+
+
+
+</div>
+        <div class="right_body">
+            <p>this is right side</p>
+            <p>this is right side</p>
+            <p>this is right side</p>
+            <p>this is right side</p>
+            <p>this is right side</p>
+
+
+        </div>
+    </div>
+
+    {% include 'footer.html' %}         
+</div>
+</body>
+
+</html> 

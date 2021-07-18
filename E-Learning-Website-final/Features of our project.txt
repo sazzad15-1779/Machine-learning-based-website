@@ -1,0 +1,7 @@
+1. login & registration 
+2. Database
+3. Ai field contents
+4. chatbot 
+5. machine project implement
+6. implemented code description
+7.  content wise quiz

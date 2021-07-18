@@ -1,0 +1,80 @@
+.nav_bar{
+    margin-bottom: 10px;
+    overflow: hidden;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: block;
+height: 100%;
+width: 100%;
+background: rgb(234, 247, 204);
+
+
+}
+.logo{     
+    float: left;
+    width: 20%;
+    height: 100%;
+    
+}
+.nav_bar_icon{
+    float: left;
+    height: 50px;
+}
+.nav_bar_logo_name{
+    margin: 0px;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 10px;
+    float: left;
+   
+}
+.menu_name{
+    float: left;
+    width: 80%;
+    height: 100%;
+}
+.ul_nav{
+    list-style: none;
+}
+.item{
+    text-align: center;
+    overflow: hidden;
+    font: 14px garamond  ;
+    float: left;
+    font-weight: bold;
+    margin-left: 8px;
+    height: auto;
+    text-transform: capitalize;
+    border-radius: 4px;
+    
+}
+.item:hover{
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+.link{
+    text-decoration: none;
+    color: rgb(3, 3, 3);
+}
+.link:hover {
+    background: rgb(253, 253, 253);
+    color: rgb(253, 36, 7);
+    
+   
+}
+.signUp{
+    float: right;
+    margin-right: 10px;
+
+}
+.signIn{
+    float: right;
+    
+
+}
+.signout{
+    float: right;
+    margin-right: 10px;
+
+}

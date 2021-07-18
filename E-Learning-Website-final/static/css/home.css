@@ -1,0 +1,342 @@
+*{
+    box-sizing: border-box;
+}
+input:focus, textarea:focus,.input_email_for_sign_up:focus ,select:focus{
+    outline: none;
+  }
+
+.Main_wrapper{
+    width: 100%;
+    height: 100%;
+    background:whitesmoke;
+}
+
+
+
+.main_body{
+   
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+      
+}
+.login_container{
+    width: 1000px;
+    height: 300px;
+    background: rgb(206, 245, 230);
+    text-align: center;
+    margin: auto;
+
+}
+.form_input{
+
+    margin: 7px;
+    outline: none;
+    border: none;
+    width: 200px;
+    height: 30px;
+
+}
+.reg_h1{
+    text-align: center;
+}
+.registration_container{
+    width: 900px;
+    height: 400px;
+    background: rgb(245, 235, 206);
+    text-align: left;
+    margin: auto;
+}
+.registration_form{
+    margin: 7px;
+    margin-left: 30%;
+   
+}
+.registration_btn {
+    width: 110px;
+    height: 35px;
+    background: rgb(201, 221, 235);
+    border-radius: 12px;
+    border: none;
+    color:black;
+    font-style: oblique;
+    font-weight: bold;
+    font-size: large;
+    margin-top: 50px;
+    margin-left: 40%;
+
+}
+ .login_btn{
+    width: 110px;
+    height: 35px;
+    background: rgb(201, 221, 235);
+    border-radius: 12px;
+    border: none;
+    color:black;
+    font-style: oblique;
+    font-weight: bold;
+    font-size: large;
+    
+}
+.content_body{
+height: 600px;
+width: 900px;
+margin: auto;
+background: rgba(255, 255, 255, 0.815);
+
+}
+
+.left_body{
+float: left;
+display: inline-block;
+width: 20%;
+height: 100%;
+background: white;
+}
+.left_body_wrapper{
+    width: 100%;
+    height: 600px;
+    overflow: auto;
+    overflow-x: hidden;
+    
+
+}
+.topic_header{
+    text-align: center;
+    height: 10px;
+    overflow: hidden;
+    padding: 10px;
+    margin: 0px;
+}
+.topic{
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 3px 2px 3px 24px;
+    font-size: 14px;
+    line-height: 1.5;
+    border-right: 1px solid rgb(214, 214, 214);
+    
+}
+.topic:hover{
+    display: block;
+    text-decoration: none;
+    color: rgb(233, 34, 84);
+    padding: 3px 2px 3px 24px;
+    font-size: 15px;
+    border: none;
+    text-shadow: 2px;
+    border-right: 2px solid  rgb(6, 235, 75);
+    border-left: 2px solid  rgb(160, 12, 12);
+    border-radius: 20px;
+   
+}
+.middle_body{
+    display: inline-block;
+    float: left;
+    
+    padding: 10px;
+    width: 60%;
+    height: 100%;
+    background: rgba(201, 199, 199, 0.096);
+}
+.right_body{
+    border-left: 1px solid rgb(214, 214, 214);
+    display: inline-block;
+    float: left;
+    width: 15%;
+    height: 100%;
+    background: rgb(253, 253, 253);
+    position: sticky;
+    top: 0;
+    padding: 10px;
+    }
+
+.quiz_btn{
+    float: right;
+    width: 110px;
+    height: 35px;
+    background: rgb(231, 160, 8);
+    border: none;
+    color:black;
+    font-style: oblique;
+    font-weight: bold;
+    font-size: large;
+    border-radius: 10px;
+}    
+.quiz_btn:hover{
+    background: rgb(243, 149, 7);
+    color:rgb(241, 241, 241);
+}
+.backbtn{
+ text-decoration: none;
+ float: left;
+ margin-top: 100px;
+ margin-left: 100px;
+ font-style: oblique;
+    font-weight: bold;
+    font-size: large;
+    border: gray;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    background: rgb(15, 107, 226);
+    color: white;
+    border-radius: 10px;
+
+}
+.backbtn:hover{
+    background: rgb(8, 35, 70);
+    color: white;
+
+}
+.description{
+    margin-top: 120px;
+    margin-right: 30px;
+
+
+}
+
+.footer{
+box-sizing: border-box;
+margin-top: 20px;
+display: block;
+width: 100%;
+height: 250px;
+padding-top:30px ;
+background: rgb(2, 22, 61);
+}
+.footer_wrapper{
+
+overflow: hidden;
+width: 100%;
+margin-left: 5%;
+margin-right: 5%;
+margin-top: 30px;
+margin-bottom: 30px;
+
+}
+.left_footer{
+    float: left;
+    width: 15%;
+    height: 150px;
+    text-align: left;
+   
+  
+}
+.middle_footer{
+    float: left;
+    width: 20%;
+    height: 150px;
+    text-align: left;
+    
+}
+.right_footer{
+    float: left;
+    height: 150px;
+    width: 20%;
+    
+
+}
+.sign_up_footer{
+    margin-left: 10px ;
+    float: left;
+    width: 30%;
+    height: 100%;
+}
+.footer_icon{
+    margin: 1%;
+    height: 20px;
+
+}
+.footer_icon:hover{
+    background: rgb(221, 200, 200);
+    border-radius: 2px;
+}
+.footer_h5{
+    color: rgb(255, 255, 255);
+    font-size: 20px; 
+}
+.footer_p{
+    color: rgb(105, 94, 94);
+    margin-left: 20px;
+    font-weight: bolder;
+}
+.footer_link{
+    display: block;
+    text-decoration: none;
+    color: rgb(255, 209, 6);
+    padding: 3px 2px 3px 24px;
+    font-size: 14px;
+    text-align: left;
+    
+   
+}
+.middle_footer1 ,.left_footer{
+    border-right: 2px solid red;
+}
+.footer_link:hover{
+    display: block;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 3px 2px 3px 24px;
+    font-size: 14px;
+    text-align: left;
+   
+}
+.footer_h4{
+    color: white;
+    font-size: 12px;
+    letter-spacing: normal;
+    color: rgb(228, 213, 213);
+    margin-left: 20px;
+    
+
+}
+.input_email_for_sign_up{
+    outline: none;
+    background: 0 0;
+    border: none;
+    color: rgb(243, 169, 32);
+    margin-bottom: 30px;
+    padding: 0 0 9px;
+    width: 100%;
+    
+    border-bottom: 2px solid white;
+    font-size: 14px;
+    margin-top: 15px;
+    vertical-align: baseline;
+    overflow: visible;
+    box-sizing: border-box;
+    cursor: text;
+}
+.sign_up_btn{
+    font-style: normal;
+    float: right;
+    min-width: 150px;
+    background-color: #c33;
+    color: #fff;
+    letter-spacing: 0;
+    line-height: 10px;
+    text-decoration: none;
+    overflow: visible;
+    text-align: center;
+    text-transform: capitalize;
+    white-space: nowrap;
+    padding: 12px 45px;  
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+
+}
+.copyright{
+    width: 100%;
+    height: 25px;
+    background: rgb(176, 226, 255);
+    text-align: center;
+    border-top: 2px solid rgb(243, 224, 224);  
+}
+.footer__copyright{
+    color: rgb(0, 0, 0);  
+   
+}

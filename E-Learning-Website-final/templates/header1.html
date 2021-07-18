@@ -1,0 +1,30 @@
+</head>
+<body>
+    <div class=" Main_wrapper">
+<div class="nav_bar">
+    <div class="nav_bar_wrapper">
+    <div class="logo">
+        <img src="static\css\images\innovation_icon1.png" class="nav_bar_icon">
+        <h5 class="nav_bar_logo_name">AI LEARNERS</h5>
+    </div>
+    <div class="menu_name">
+        <ul class="ul_nav">
+        <li class="item"><a class="link active" aria-current="page" href="{{ url_for('homepage')}}">Home</a></li>
+        <li class="item"><a class="link active" aria-current="page" href="{{ url_for('ai') }}">Artificial Intellegence</a></li>
+        <li class="item"><a class="link active" aria-current="page" href="{{ url_for('machinelearning') }}">Machine Learning</a></li>
+        <li class="item"><a class="link active" aria-current="page" href="{{ url_for('deeplearning') }}">Deep Learning</a></li>
+        <li class="item"><a class="link active" aria-current="page" href="{{ url_for('robotics') }}">Robotics</a></li>
+        <li class="item"><a class="link active" aria-current="page" href="{{ url_for('python') }}">Python</a></li>
+        <li class="item"><a class="link active" aria-current="page" href="{{ url_for('project') }}">Project Implementation</a></li>
+{% if session.logged_in %}
+        <li class="item signIn"><a class="link active" aria-current="page" href="{{ url_for('logout') }}">Logout</a></li>
+  {% else %}
+        <li class="item signUp"><a class="link active" aria-current="page" href="{{ url_for('signUp') }}">Sign Up</a></li>
+        <li class="item signIn"><a class="link active" aria-current="page" href="{{ url_for('login') }}">Login</a></li>
+  {% endif %}
+        
+
+        </ul>
+         </div>
+     </div>
+</div>
